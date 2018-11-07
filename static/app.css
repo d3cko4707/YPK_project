@@ -1,0 +1,15 @@
+body > .container {
+    padding-top: 80px;
+}
+
+.navbar {
+    background-color: #42413D;
+}
+
+.row {
+    padding-top: 40px
+}
+
+.register {
+    padding-top: 40px;
+}

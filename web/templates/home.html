@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div id="carousel" class="carousel slide" data-interval="5000" data-ride="carousel">
+      <ol class="carousel-indicators">
+          {% for picture in carousel %}
+          <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}" class=""></li>
+          {% endfor %}
+      </ol>
+      <div class="carousel-inner">
+          {% for picture in carousel %}
+          <div class="item{% if forloop.counter0 == 0 %} active{% endif %}">
+              <img class="slide-image" src="{{ picture.image.url }}" >
+              <div class="carousel-caption">
+                  <h3><a style="color:white" href="#">{{ picture.event.name }}</a></h3>
+                  <p>{{ picture.event.short_desc }}</p>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+      <a class="left carousel-control" href="#carousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+  </div>
+{% endblock %}
